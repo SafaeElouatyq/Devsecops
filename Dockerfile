@@ -1,6 +1,8 @@
-FROM python:3.9
+FROM python:3.9-slim
+
 WORKDIR /app
-COPY ../api .
-RUN pip install flask
+COPY ./api/ .
+
+
 EXPOSE 5000
-CMD [&quot;python&quot;, &quot;app.py&quot;]
+CMD ["python", "app.py"]
